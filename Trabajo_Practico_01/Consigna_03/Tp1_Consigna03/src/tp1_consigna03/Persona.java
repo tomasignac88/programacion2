@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tp1;
-
+package tp1_consigna03;
 
 /**
  *
  * @author tomas
  */
-public class Persona {
-    private long dni;
-    private String apellido;
-    private String nombre;
+public class Persona{
+    protected long dni;
+    protected String apellido;
+    protected String nombre;
 
     public Persona() {
     }
@@ -63,6 +62,5 @@ public class Persona {
     
         return String.format("%d %s %s", dni,apellido, nombre);
     }
-    
     
 }

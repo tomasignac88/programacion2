@@ -15,11 +15,12 @@ public class Tp1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Persona p1 = new Persona(39533876,"Masiero","Tomas");
-        System.out.println(p1);
-        System.out.println("Actualizando persona");
+        Persona p1 = new Persona();
+        System.out.println("Actualizando persona con metodo input");
         p1.input(40345034, "Masiero", "Martina");
         System.out.println(p1);
+        System.out.println("Mostrando los datos de la persona con metodo show");
+        System.out.println(p1.show());
     }
     
 }

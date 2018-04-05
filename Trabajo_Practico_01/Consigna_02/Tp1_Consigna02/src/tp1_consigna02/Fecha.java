@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package tp1_consigna02;
+import java.util.ArrayList;
 
 /**
  *
@@ -51,10 +52,16 @@ public class Fecha {
         this.dia = dia;
     }
     
-    public void input(int dia,int mes, int anho){
+   public void input(int dia,int mes, int anho){
         setDia(dia);
         setMes(mes);
         setAnho(anho);
+    }
+    public String show(){
+        getDia();
+        getMes();
+        getAnho();
+        return String.format("%d/%d/%d",dia,mes,anho);
     }
     public int comparar(Fecha f2){
         int a=0;
@@ -75,7 +82,7 @@ public class Fecha {
             System.out.println("Comparo mes, Fecha 1 es mayor que fecha 2");
             return a=1;}
             else if (this.dia > f2.dia){
-            System.out.println("Comparop dia, Fecha 1 es mayor que fecha 2");
+            System.out.println("Comparo dia, Fecha 1 es mayor que fecha 2");
             return a=1;
             }
         
@@ -95,42 +102,49 @@ public class Fecha {
     
     public void desplazar(Fecha f,int cantidad){
         int stop = cantidad;
-        int [] losValores = new int[6];
-        int [] losValores1 = new int[3];
-        int [] losValores2 = new int[1];
-        losValores[0] = 1;losValores[1]=3;losValores[2]=5;losValores[3]=7;losValores[4]=8;losValores[5]=10;losValores[6]=12;
-        losValores1[0] = 4;losValores1[1] = 6;losValores1[2] = 9;losValores1[3] = 11;
-        losValores2[0] = 2;
+        int [] losValores = new int[7];
+        int [] losValores1 = new int[4];
+        //Lleno array
+        losValores[0] = 1;
+        losValores[1]= 3;
+        losValores[2]= 5;
+        losValores[3]= 7;
+        losValores[4]= 8;
+        losValores[5]= 10;
+        losValores[6]= 12;
+        losValores1[0] = 4;
+        losValores1[1] = 6;
+        losValores1[2] = 9;
+        losValores1[3] = 11;
+        
         for (int i = 0; i < cantidad; i++) {
             this.dia ++;
             stop = this.dia;
             //Meses con 31 dias
-            for(int j=0; j< 6 ; j++){
+            for(int j=0; j<= 6 ; j++){
             if (this.mes == losValores[j] ){
-                if (stop == 31) {
+                if (stop == 32) {
                 this.dia = 1;
                 this.mes ++;
                     }
                 }
             }
             //Meses con 30
-            for(int k=0; k< 3 ; k++){
+            for(int k=0; k<= 3 ; k++){
             if (this.mes == losValores1[k] ){
-                if (stop == 30) {
+                if (stop == 31) {
                 this.dia = 1;
                 this.mes ++;
                     }
                 }
             }
             //Febrero
-            for(int l=0; l< 6 ; l++){
-            if (this.mes == losValores2[l] ){
-                if (stop == 28) {
+            if (this.mes == 2 ){
+                if (stop == 29) {
                 this.dia = 1;
                 this.mes ++;
                     }
                 }
-            }
             if(this.mes == 13){
                 this.anho ++;
                 this.mes=1;

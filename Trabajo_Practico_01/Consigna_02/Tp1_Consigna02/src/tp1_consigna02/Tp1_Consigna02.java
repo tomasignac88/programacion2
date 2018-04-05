@@ -22,7 +22,7 @@ public class Tp1_Consigna02 {
         System.out.println("Fecha 2: ");
         System.out.println(f2);
         f1.comparar(f2);
-        f2.desplazar(f2, 400);
+        f2.desplazar(f2, 1000);
         System.out.println(f2);
     }
     
