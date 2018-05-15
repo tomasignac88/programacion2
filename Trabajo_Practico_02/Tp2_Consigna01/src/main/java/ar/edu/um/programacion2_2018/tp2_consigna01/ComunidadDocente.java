@@ -16,7 +16,7 @@ public class ComunidadDocente {
     private Profesor[] profesores;
 
     public ComunidadDocente() {
-       ArrayList<Object> lista = new ArrayList<>(Arrays.asList(this.profesores)); 
+        
     }
 
     public ComunidadDocente(Profesor[] profesores) {
@@ -31,24 +31,26 @@ public class ComunidadDocente {
         this.profesores = profesores;
     }
     
-    public void add( Profesor p2){
-        
+    public void add(Profesor p2){
+        for (int i = 0; i < profesores.length; i++) {
+            profesores[i]= p2;
+        }
         //profesores.add(p2); /* Agregamos el objeto p2 */
     }
-    public void remove(Profesor p2){
-        Object[] temp = new Object[profesores.length]; /* Temporal Array*/
-        for (int i = 0; i < profesores.length; i++) {
+    // public void remove(Profesor p2){
+      //  Object[] temp = new Object[profesores.length]; /* Temporal Array*/
+        //for (int i = 0; i < profesores.length; i++) {
          /* El String.valueOf(array[i]) es para convertir a 
            String el Objecto  comparamos si no es igual a b ,si se cumple 
            lo agregamos al temporal*/
-         if(!String.valueOf(profesores[i]).toLowerCase().equals("b"))
-        {
-            temp[i]=profesores[i]; /* Agregamos al Arreglo Temporal */
-        }
-    }
+         //if(!String.valueOf(profesores[i]).toLowerCase().equals("b"))
+        //{
+          //  temp[i]=profesores[i]; /* Agregamos al Arreglo Temporal */
+        //}
+    //}
        /*ArrayList<Object> lista = new ArrayList<>(Arrays.asList(this.profesores)); 
         lista.remove(p2); /* Eliminamos al objeto p2 */
-    }
+    //}
     public void show(){
          System.out.println(Arrays.toString(profesores));
          /*for (int i = 0; i < profesores.length; i++) {
